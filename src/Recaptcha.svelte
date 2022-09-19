@@ -73,25 +73,17 @@ let closeObserver = null;
 const eventEmitters = {
     onExpired: async () => {
         debug("expired?");
-        recaptcha.reset(instanceId);
     },
     onError: async (err) => {
         const debug = dbg.extend("onError");
         debug("an error occured during initialization");
         dispatch("error", { msg: "please check your site key" });
         captcha.errors.push("empty");
-        recaptcha.reset(instanceId);
     },
     onSuccess: async (token) => {
         const debug = dbg.extend("onSuccess");
         debug("dispatching success, we have a token");
         dispatch("success", { msg: "ok", token: token });
-
-        setTimeout(() => recaptcha.reset(instanceId), 1000);
-        debug("resetting, google needs allowed time if visible recaptcha..");
-
-        observer = defer();
-        debug("resetting observer");
     },
     onReady: () => {
         const debug = dbg.extend("onReady");
