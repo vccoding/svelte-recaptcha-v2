@@ -48,6 +48,7 @@ In your form, add the component:
     sitekey={googleRecaptchaSiteKey}
     badge={"top"}
     size={"invisible"}
+    theme={"light"}
     on:success={onCaptchaSuccess}
     on:error={onCaptchaError}
     on:expired={onCaptchaExpire}

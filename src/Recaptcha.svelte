@@ -35,6 +35,8 @@ const dispatch = createEventDispatcher();
 
 export let sitekey;
 
+export let theme = "light";
+
 export let badge = "top";
 /*inline|bottomleft|bottomright*/
 
@@ -178,6 +180,7 @@ const captcha = {
             instanceId = grecaptcha.render("googleRecaptchaDiv", {
                 "badge": badge,
                 "sitekey": sitekey,
+                "theme": theme,
                 "callback": eventEmitters.onSuccess,
                 "expired-callback": eventEmitters.onExpired,
                 "error-callback": eventEmitters.onError,
