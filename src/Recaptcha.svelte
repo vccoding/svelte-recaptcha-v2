@@ -70,7 +70,9 @@ let closeObserver = null;
 /*---------------------------------------------| dispatchers |--*/
 
 const eventEmitters = {
-    onExpired: async () => {},
+    onExpired: async () => {
+        dispatch("expired")
+    },
     onError: async (err) => {
         dispatch("error", { msg: "please check your site key" });
         captcha.errors.push("empty");

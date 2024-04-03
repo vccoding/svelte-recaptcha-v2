@@ -67,7 +67,6 @@ const onCaptchaReady = (event) => {
 };
 
 const onCaptchaSuccess = (event) => {
-    userTracker.resolve(event);
     console.log("token received: " + event.detail.token);
     /*
      │If using checkbox method, you can attach your
