@@ -1,6 +1,6 @@
 {
     "name": "@vccoding/svelte-recaptcha-v2",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "description": "Google ReCaptcha v2 implementation for Svelte and SvelteKit",
     "scripts": {
         "build": "rollup -c",
@@ -8,6 +8,12 @@
     },
     "types": "./types/index.d.ts",
     "svelte": "./src/index.js",
+    "exports": {
+        ".": {
+          "svelte": "./src/index.js"
+        },
+        "./src/*": "./src/*"
+    },
     "module": "./dist/index.mjs",
     "main": "./dist/index.js",
     "repository": {
